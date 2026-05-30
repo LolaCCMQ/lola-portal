@@ -202,7 +202,7 @@ let currentUser = null;
 async function apiCall(body) {
   const res = await fetch(FUNC_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json", "apikey": ANON_KEY },
+    headers: { "Content-Type": "application/json", "apikey": ANON_KEY, "Authorization": "Bearer " + ANON_KEY },
     body: JSON.stringify(body)
   });
   return res.json();
